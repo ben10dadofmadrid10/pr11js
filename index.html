@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quinta Serie - Práctico 11 · Ejercicio 11</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>🏷️ Ejercicio 11: Números impares del 1 al 20</h2>
+
+    <div class="instrucciones">
+      <h3>📋 Instrucciones</h3>
+      <p>Este ejercicio recorre los números del <b>1 al 20</b> y muestra solamente los <b>impares</b>, usando la condición <code>i % 2 !== 0</code>.</p>
+    </div>
+
+   
+    <ul id="listaImpares" class="lista"></ul>
+
+    <button id="btnEjecutar" class="btn" type="button">¡Generar impares!</button>
+
+    <footer>Curso de JavaScript · Enseñanza Media | Ejercicio 11</footer>
+  </div>
+
+
+  <script>
+    function generarImpares() {
+      let lista = document.getElementById('listaImpares');
+      lista.innerHTML = ""; 
+
+      for (let i = 1; i <= 20; i++) {
+        if (i % 2 !== 0) { 
+          let item = document.createElement('li');
+          item.innerText = "Número impar: " + i;
+          lista.appendChild(item);
+          console.log("generarImpares(): i = " + i + " → impar");
+        }
+      }
+    }
+
+
+    let btnEjecutar = document.getElementById('btnEjecutar');
+    btnEjecutar.onclick = generarImpares;
+
+  
+    console.log('Script cargado: botón #btnEjecutar enlazado a generarImpares; listo para ejecutar.');
+  </script>
+</body>
+</html>
